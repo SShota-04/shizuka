@@ -5,7 +5,6 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -13,9 +12,6 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <button type="submit" onclick="location.href='{{ route('contact.create') }}'" class="btn btn-primary">
-                        新規登録
-                    </button>
 
                     <form method="GET" aciton="{{ route('contact.index') }}" class="d-flex">
                         <input class="form-control" type="search" name="search" placeholder="検索" aria-label="Search">
