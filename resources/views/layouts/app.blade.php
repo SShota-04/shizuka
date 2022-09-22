@@ -152,7 +152,7 @@
         </main>
         <footer>
             <div class="footer-section">
-                <button type="submit" onclick="location.href='{{ url('/') }}'" class="btn-footer">
+                <button type="submit" onclick="location.href='{{ url('contact/index') }}'" class="btn-footer">
                     HOME
                 </button>
                 <button type="submit" onclick="location.href='{{ route('contact.create') }}'" class="btn-footer">
