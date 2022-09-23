@@ -46,6 +46,9 @@
             margin:0;
             padding:10px 0 0 0;
         }
+        .nav-item{
+            margin-bottom:5px;
+        }
         .nav-user{
             text-decoration:none;
             color:#fff;
@@ -222,8 +225,14 @@
             margin: 0 auto;
         }
 
-        /* show */
-
+        /* login */
+        .form-check{
+            margin-bottom:30px;
+        }
+        .btn-link{
+            display:block;
+            text-align:center;
+        }
     </style>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
