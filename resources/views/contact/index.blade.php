@@ -35,4 +35,18 @@
         {{ $contacts->links()}}
     </div>
 </div>
+<script>
+<!--
+/**
+javascriptで削除確認メッセージの表示
+**/
+-->
+function deletePost(e){
+    'use strict';
+    if(confirm('削除しますか？')){
+        document.getElementById('delete_' + e.dataset.id).submit();
+    }
+}
+
+</script>
 @endsection
