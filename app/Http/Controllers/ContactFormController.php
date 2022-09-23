@@ -47,7 +47,6 @@ class ContactFormController extends Controller
             foreach($search_split2 as $value)
             {
                 $query->where('tweet', 'like','%'.$value.'%');
-                $query->where('description', 'like','%'.$value.'%');
             }
         };
 
