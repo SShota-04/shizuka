@@ -19,6 +19,7 @@
         body{
             margin:0;
         }
+        /* header */
         .app-title{
             text-decoration:none;
             color:#fff;
@@ -64,9 +65,92 @@
             display: block;
             font-weight:bold;
         }
+
+        /* main */
         .main-section{
             margin-top:75px;
+            margin-bottom: 75px;
+            overflow-y:scroll;
         }
+        .post-body{
+            width:500px;
+            margin:0 auto;
+        }
+        .search-section{
+            height:70px;
+            padding-top:10px;
+            margin-bottom:20px;
+            text-align:center;
+        }
+        .search-box{
+            height:40px;
+            width:200px;
+            padding:5px;
+            border:none;
+            outline:none;
+            border-bottom: solid 1.5px #0067c0;
+        }
+        .btn-search{
+            margin-left:10px;
+            padding:5px;
+            height:30px;
+            color:#fff;
+            background-color:#2876b9;
+            border:solid 1px #2876b9;
+            border-radius:5px;
+        }
+
+        /* index post */
+        .post-box{
+            margin-bottom:30px;
+            border-radius: 3px;
+            box-shadow: 0 10px 10px 1px rgba(1, 56, 104, 0.42);
+        }
+        .post-header{
+            height:60px;
+            width:430px;
+            margin:0 auto;
+            color:#5a5a5a;
+            padding:15px 20px;
+            border-bottom:solid 1px #004B8C;
+        }
+        .post-header p{
+            margin:0;
+        }
+        .post-title{
+            padding-bottom:10px;
+            font-weight:bold;
+            overflow-wrap: normal;
+        }
+        .post-date{
+            font-size:8px;
+        }
+        .post-content{
+            height: 200px;
+            padding: 10px 20px;
+            overflow-y: auto;
+            overflow-wrap: normal;
+        }
+        .post-footer{
+            height:50px;
+            display:flex;
+            justify-content: space-evenly;
+        }
+        .post-footer a{
+            height:25px;
+            width:80px;
+            padding:5px;
+            color:#fff;
+            background-color:#2876b9;
+            text-decoration:none;
+            border:solid 1px #2876b9;
+            border-radius:5px;
+            letter-spacing:0.1em;
+            display:block;
+            text-align:center;
+        }
+
+        /* footer */
         footer{
             height: 70px;
             width: 100vw;
@@ -90,6 +174,56 @@
             padding: 0 10px;
             letter-spacing:0.1em;
         }
+
+        /* create */
+        .create-body{
+            width:500px;
+            margin:0 auto;
+        }
+        .post-theme{
+            text-align:center;
+            font-size:20px;
+            font-weight:bold;
+            color:#0067c0;
+        }
+        .form-flex{
+            display:flex;
+            justify-content:space-between;
+            margin-bottom:40px;
+        }
+        .form-flex dt{
+            font-size: 20px;
+            color: #5a5a5a;
+        }
+        .form-flex dd{
+            width:350px;
+        }
+        .form-input{
+            width: 100%;
+            height: 25px;
+            padding: 3px;
+        }
+        .form-flex textarea{
+            width:100%;
+            height:250px;
+            padding:5px;
+        }
+        .form-btn{
+            background-color: #0067c0;
+            border: solid 1px #0067c0;
+            color: #fff;
+            font-weight: bold;
+            font-size: 15px;
+            height: 45px;
+            padding: 0 10px;
+            letter-spacing: 0.1em;
+            border-radius: 5px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* show */
+
     </style>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>

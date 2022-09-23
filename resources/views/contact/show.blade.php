@@ -14,23 +14,13 @@
                         </div>
                     @endif
 
-                    {{ __('show') }}
-                    {{ $contact->your_name }}
-                    {{ $contact->title }}
-                    {{ $contact->email }}
-                    {{ $contact->url }}
-                    {{ $gender }}
-                    {{ $contact->age }}
-                    {{ $contact->contact }}
+                    <p>COMFIRM</p>
+                    {{ $contact->tweet }}
+                    {{ $contact->description }}
                     <form method="GET" action="{{route('contact.edit', ['id' => $contact->id])}}">
                         @csrf
                         
-                        <input class="btn btn-info" type="submit" value="変更する"></input>
-                    </form>
-
-                    <form method="POST" action="{{route('contact.destroy', ['id' => $contact->id])}}" id="delete_{{ $contact->id }}">
-                        @csrf
-                        <a href="#" class="btn btn-danger" data-id="{{ $contact->id }}" onclick="deletePost(this);">削除する</a>
+                        <input class="btn btn-info" type="submit" value="Edit"></input>
                     </form>
                 </div>
             </div>

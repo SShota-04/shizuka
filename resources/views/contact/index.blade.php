@@ -2,49 +2,37 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
+    <div class="post-body">
+        @if (session('status'))
+            <div class="alert alert-success" role="alert">
+                {{ session('status') }}
+            </div>
+        @endif
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    <form method="GET" aciton="{{ route('contact.index') }}" class="d-flex">
-                        <input class="form-control" type="search" name="search" placeholder="検索" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">検索する</button>
+        <form method="GET" aciton="{{ route('contact.index') }}" class="search-section">
+            <input class="search-box" type="search" name="search" placeholder="search" aria-label="Search">
+            <button class="btn-search" type="submit">Search</button>
+        </form>
+        <div class="post-section">
+            @foreach($contacts as $contact)
+            <div class="post-box">
+                <div class="post-header">
+                    <p class="post-title"><span></span>{{ $contact->tweet }}</p>
+                    <p class="post-date">{{ $contact->created_at }}</p>
+                </div>
+                <p class="post-content">{{ $contact->description }}</p>
+                <div class="post-footer">
+                    <form method="POST" action="{{route('contact.destroy', ['id' => $contact->id])}}" id="delete_{{ $contact->id }}">
+                        @csrf
+                        <a href="#" class="btn btn-danger" data-id="{{ $contact->id }}" onclick="deletePost(this);">DELETE</a>
                     </form>
-
-                    <table class="table">
-                        <thead>
-                            <tr>
-                            <th scope="col">id</th>
-                            <th scope="col">氏名</th>
-                            <th scope="col">件名</th>
-                            <th scope="col">登録日時</th>
-                            <th scope="col">詳細</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        @foreach($contacts as $contact)
-                        <tr>
-                        <th scope="row">{{ $contact->id }}</th>
-                        <td>{{ $contact->your_name }}</td>
-                        <td>{{ $contact->title }}</td>
-                        <td>{{ $contact->created_at }}</td>
-                        <td><a href="{{ route('contact.show', ['id' => $contact->id ])}}">詳細を見る</a></td>
-                        </tr>
-                        @endforeach
-                        </tbody>
-                    </table>
-
-                    {{ $contacts->links()}}
+                    <a href="{{ route('contact.edit', ['id' => $contact->id ])}}">EDIT</a>
                 </div>
             </div>
+            @endforeach
         </div>
+
+        {{ $contacts->links()}}
     </div>
 </div>
 @endsection

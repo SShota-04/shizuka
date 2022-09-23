@@ -29,7 +29,7 @@ class ContactFormController extends Controller
         //クエリビルダ
         $contacts = DB::table('contact_forms')
 
-        ->select('id', 'your_name', 'title', 'created_at')
+        ->select('id', 'tweet', 'description', 'created_at')
         ->orderBy('created_at', 'desc')
         ->paginate(20);
 
@@ -46,14 +46,13 @@ class ContactFormController extends Controller
             //単語をループで回す
             foreach($search_split2 as $value)
             {
-                $query->where('your_name', 'like','%'.$value.'%');
+                $query->where('tweet', 'like','%'.$value.'%');
             }
         };
 
-        $query->select('id', 'your_name', 'title', 'created_at');
+        $query->select('id', 'tweet', 'description', 'created_at');
         $query->orderBy('created_at', 'desc');
         $contacts = $query->paginate(20);
-
 
         //dd($contacts);
 
@@ -82,13 +81,8 @@ class ContactFormController extends Controller
     {
         $contact = new ContactForm;
         
-        $contact->your_name = $request->input('your_name');
-        $contact->title = $request->input('title');
-        $contact->email = $request->input('email');
-        $contact->url = $request->input('url');
-        $contact->gender = $request->input('gender');
-        $contact->age = $request->input('age');
-        $contact->contact = $request->input('contact');
+        $contact->tweet = $request->input('tweet');
+        $contact->description = $request->input('description');
 
         $contact->save();
 
@@ -108,9 +102,9 @@ class ContactFormController extends Controller
         //
         $contact = ContactForm::find($id);
 
-        $gender = CheckFormData::checkGender($contact);
+        //$gender = CheckFormData::checkGender($contact);
 
-        return view('contact.show', compact('contact','gender'));
+        return view('contact.show', compact('contact'));
     }
 
     /**
@@ -139,13 +133,15 @@ class ContactFormController extends Controller
         //
         $contact = ContactForm::find($id);
         
-        $contact->your_name = $request->input('your_name');
+        $contact->tweet = $request->input('tweet');
+        $contact->description = $request->input('description');
+        /*$contact->your_name = $request->input('your_name');
         $contact->title = $request->input('title');
         $contact->email = $request->input('email');
         $contact->url = $request->input('url');
         $contact->gender = $request->input('gender');
         $contact->age = $request->input('age');
-        $contact->contact = $request->input('contact');
+        $contact->contact = $request->input('contact');*/
 
         $contact->save();
 
