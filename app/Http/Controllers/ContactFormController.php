@@ -46,7 +46,7 @@ class ContactFormController extends Controller
             //単語をループで回す
             foreach($search_split2 as $value)
             {
-                $query->where('tweet', 'like','%'.$value.'%');
+                $query->where('tweet', 'description', 'like','%'.$value.'%');
             }
         };
 
