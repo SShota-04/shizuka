@@ -30,6 +30,10 @@
                 <dt>Comment</dt>
                 <dd><textarea name="description"></textarea></dd>
             </dl>
+            <dl class="form-flex">
+                <dt>Shizuka-score</dt>
+                <dd><input type="range" min="0" max="10" name="shizukasa"></dd>
+            </dl>
             <input class="form-btn" type="submit" value="POST"></input>
         </form>
     </div>

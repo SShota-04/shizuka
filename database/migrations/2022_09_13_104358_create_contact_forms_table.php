@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('tweet');
             $table->text('description')->nullable();
+            $table->integer('shizukasa');
             $table->timestamps();
         });
     }

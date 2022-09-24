@@ -17,6 +17,7 @@
                     <p>COMFIRM</p>
                     {{ $contact->tweet }}
                     {{ $contact->description }}
+                    {{ $contact->shizukasa }}
                     <form method="GET" action="{{route('contact.edit', ['id' => $contact->id])}}">
                         @csrf
                         

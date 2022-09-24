@@ -34,6 +34,7 @@
             position: fixed;
             width: 100vw;
             top: 0;
+            z-index:100;
         }
         .header-section .container{
             display: flex;
@@ -153,6 +154,21 @@
             text-align:center;
         }
 
+        /* map */
+        .map-box{
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-top: 60%;
+        }
+        #map{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
         /* footer */
         footer{
             height: 70px;
@@ -233,6 +249,95 @@
             display:block;
             text-align:center;
         }
+        /* rate */
+        .score-box{
+            height:50px;
+            display:flex;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        .score-title{
+            margin: 0;
+            padding: 10px;
+            color: #9a9797;
+            font-weight: bold;
+        }
+        .rate{
+            position:relative;
+            display:inline-block;
+            padding:10px;
+        }
+        .rate:before{
+            content:"★★★★★★★★★★";
+            color:#ccc;
+        }
+
+        
+        .rate-1:before,
+        .rate-2:before,
+        .rate-3:before,
+        .rate-4:before,
+        .rate-5:before,
+        .rate-6:before,
+        .rate-7:before,
+        .rate-8:before,
+        .rate-9:before,
+        .rate-10:before,
+        {
+            position:absolute;
+            top:0;
+            left:0;
+            overflow:hidden;
+            height:24px;
+        }
+
+        .rate-1:after,
+        .rate-2:after,
+        .rate-3:after,
+        .rate-4:after,
+        .rate-5:after,
+        .rate-6:after,
+        .rate-7:after,
+        .rate-8:after,
+        .rate-9:after,
+        .rate-10:after{
+            position:absolute;
+            top:10px;
+            left:10px;
+            width:100%;
+            color: #ffa500;
+        }
+
+        .rate-1:after{
+            content:"★";
+        }
+        .rate-2:after{
+            content:"★★";
+        }
+        .rate-3:after{
+            content:"★★★";
+        }
+        .rate-4:after{
+            content:"★★★★";
+        }
+        .rate-5:after{
+            content:"★★★★★";
+        }
+        .rate-6:after{
+            content:"★★★★★★";
+        }
+        .rate-7:after{
+            content:"★★★★★★★";
+        }
+        .rate-8:after{
+            content:"★★★★★★★★";
+        }
+        .rate-9:after{
+            content:"★★★★★★★★★";
+        }
+        .rate-10:after{
+            content:"★★★★★★★★★★";
+        }
     </style>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -304,5 +409,11 @@
             </div>
          </footer>
     </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="{{ asset('/js/setLocation.js') }}"></script>
+    <script src="{{ asset('/js/result.js') }}"></script>
+    <!--<script src="{{ asset('/js/currentLocation.js') }}"></script>-->
+    <script src="https://maps.googleapis.com/maps/api/js?language=ja&region=JP&key=AIzaSyBNlwWSnXAvjQQ0Yk4xaf2-HMaukyVlpj0&callback=initMap" async defer>
+	</script>
 </body>
 </html>

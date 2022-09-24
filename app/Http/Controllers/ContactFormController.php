@@ -29,7 +29,7 @@ class ContactFormController extends Controller
         //クエリビルダ
         $contacts = DB::table('contact_forms')
 
-        ->select('id', 'tweet', 'description', 'created_at')
+        ->select('id', 'tweet', 'description', 'shizukasa', 'created_at')
         ->orderBy('created_at', 'desc')
         ->paginate(20);
 
@@ -50,7 +50,7 @@ class ContactFormController extends Controller
             }
         };
 
-        $query->select('id', 'tweet', 'description', 'created_at');
+        $query->select('id', 'tweet', 'description', 'shizukasa', 'created_at');
         $query->orderBy('created_at', 'desc');
         $contacts = $query->paginate(20);
 
@@ -83,6 +83,7 @@ class ContactFormController extends Controller
         
         $contact->tweet = $request->input('tweet');
         $contact->description = $request->input('description');
+        $contact->shizukasa = $request->input('shizukasa');
 
         $contact->save();
 
@@ -135,6 +136,7 @@ class ContactFormController extends Controller
         
         $contact->tweet = $request->input('tweet');
         $contact->description = $request->input('description');
+        $contact->shizukasa = $request->input('shizukasa');
         /*$contact->your_name = $request->input('your_name');
         $contact->title = $request->input('title');
         $contact->email = $request->input('email');

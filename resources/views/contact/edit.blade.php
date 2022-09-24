@@ -20,6 +20,10 @@
             <dt>Comment</dt>
             <dd><textarea name="description">{{ $contact->description }}</textarea></dd>
         </dl>
+        <dl class="form-flex">
+            <dt>Shizuka-score</dt>
+            <dd><input type="range" min="0" max="10" name="shizukasa" value="{{ $contact->shizukasa }}"></dd>
+        </dl>
             <input class="form-btn" type="submit" value="UPDATE"></input>
         </form>
     </div>
